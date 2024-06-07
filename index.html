@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greenden</title>
+
+    <link
+      href="
+https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
+"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <nav
+      class="bg-blue-600 p-3 flex items-center justify-between shadow-2xl sticky top-0 z-10"
+    >
+      <h1 class="text-2xl">Greenden</h1>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4 6h16M4 12h16M4 18h16"
+          class="md:hidden"
+        />
+      </svg>
+
+      <ul class="gap-5 text-black-600 hidden md:flex">
+        <li><a class="hover:underline hover:text-black" href="#">Home</a></li>
+        <li>
+          <a class="hover:underline hover:text-black" href="#">Products</a>
+        </li>
+        <li>
+          <a class="hover:underline hover:text-black" href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header Section -->
+
+    <section class="bg-blue-500 p-4 md:p-10 flex justify-center">
+      <div>
+        <p class="mb-4">
+          We offer you a wide range of Artificial and Natural Flowers
+        </p>
+
+        <h2 class="font-bold text-3xl md:text-5xl mt-3 mb-5">
+          Plants for your interior
+        </h2>
+        <div>
+          <button class="bg-black rounded p-1 text-white">Shop Now</button>
+          <button class="bg-black rounded p-1 text-white">Watch Video</button>
+        </div>
+
+        <p class="mt-4">10+ Plant Species | 100+ Clients</p>
+      </div>
+
+      <div class="hidden md:flex">
+        <img
+          src="data:image/jpeg;base64,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"
+          class="ml-14"
+        />
+      </div>
+    </section>
+
+    <!-- About Section -->
+
+    <section class="text-center">
+      <h1 class="text-3xl font-bold mt-5">About Us</h1>
+      <p>This Site for those who admire the beauty and harmony of nature</p>
+
+      <div class="md:flex">
+        <div class="border border-black p-2 m-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-10 inline"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+            />
+          </svg>
+          <h2 class="text-xl font-medium m-2">Large Assortment</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+            tempora ut dolor quos unde vel, fugiat necessitatibus velit,
+            corrupti pariatur voluptatem ipsa asperiores mollitia obcaecati
+            incidunt quisquam recusandae ex ea.
+          </p>
+        </div>
+        <div class="border border-black p-2 m-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-10 inline"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13 5l7 7-7 7M5 5l7 7-7 7"
+            />
+          </svg>
+          <h2 class="text-xl font-medium m-2">Free and fast Supporting</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+            tempora ut dolor quos unde vel, fugiat necessitatibus velit,
+            corrupti pariatur voluptatem ipsa asperiores mollitia obcaecati
+            incidunt quisquam recusandae ex ea.
+          </p>
+        </div>
+        <div class="border border-black p-2 m-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-10 inline"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M16 3h5m0 0v5m0-5l-6 6M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.517l2.257-1.128a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z"
+            />
+          </svg>
+          <h2 class="text-xl font-medium m-2">24/7 Support</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+            tempora ut dolor quos unde vel, fugiat necessitatibus velit,
+            corrupti pariatur voluptatem ipsa asperiores mollitia obcaecati
+            incidunt quisquam recusandae ex ea.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best seller Section -->
+
+    <section class="p-4 text-center">
+      <h1 class="font-bold mt-5 text-3xl">Best Seller</h1>
+
+      <div class="grid md:grid-cols-4 grid-cols-2 mt-5 gap-5">
+        <div>
+          <img
+            src="./images/best seller__1.jpg"
+            class="inline hover:shadow-xl transform hover:-translate-y-2"
+          />
+          <h1>Rose plant</h1>
+          <p>₹30</p>
+        </div>
+        <div>
+          <img
+            src="./images/best seller_2.jpg"
+            class="inline hover:shadow-xl transform hover:-translate-y-2"
+          />
+          <h1>Rose plant</h1>
+          <p>₹20</p>
+        </div>
+        <div>
+          <img
+            src="./images/best seller_3.jpg"
+            class="inline hover:shadow-xl transform hover:-translate-y-2"
+          />
+          <h1>Rose plant</h1>
+          <p>₹50</p>
+        </div>
+        <div>
+          <img
+            src="./images/best seller_4.jpg"
+            class="inline hover:shadow-xl transform hover:-translate-y-2"
+          />
+          <h1>Rose plant</h1>
+          <p>₹300</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews -->
+
+    <section>
+      <h1 class="font-bold text-center text-3xl">Customer Reviews</h1>
+      <div class="justify-center m-5 flex flex-col gap-5">
+        <div class="bg-black text-white container p-5">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis eum vitae eligendi nemo omnis atque, earum libero
+            quibusdam aperiam inventore rerum doloribus accusamus eius expedita
+            cum, magnam, nostrum praesentium. Nostrum!
+          </p>
+          <p class="font-bold text-red-500">Sivakumar1</p>
+        </div>
+        <div class="bg-black text-white container p-5">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis eum vitae eligendi nemo omnis atque, earum libero
+            quibusdam aperiam inventore rerum doloribus accusamus eius expedita
+            cum, magnam, nostrum praesentium. Nostrum!
+          </p>
+
+          <p class="font-bold text-red-500">Sivakumar2</p>
+        </div>
+        <div class="bg-black text-white container p-5">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis eum vitae eligendi nemo omnis atque, earum libero
+            quibusdam aperiam inventore rerum doloribus accusamus eius expedita
+            cum, magnam, nostrum praesentium. Nostrum!
+          </p>
+          <p class="font-bold text-red-500">Sivakumar3</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Letter -->
+
+    <section class="text-center">
+      <h1 class="font-bold text-3xl text-center">Join our News Letter</h1>
+      <p>
+        Signup for our email newspaper to get exclusive discounts, updates, and
+        more
+      </p>
+      <input class="border border-black mt-3 p-1" style="width: 80%" /> <br />
+      <button class="bg-black text-white m-2 p-2 underline">Subscribe</button>
+    </section>
+
+    <!-- Footer -->
+
+    <section class="bg-blue-500 p-10 flex flex-col gap-5">
+      <h1 class="text-4xl font-bold">Greenden</h1>
+      <p>
+        Lorem ipsum dolor at nobis excepturi veniam aspernatur! Modi quos sunt
+        eligendi, temporibus accusamus provident veritatis dolorem?
+      </p>
+
+      <p>@ 2024 Greenday.com</p>
+    </section>
+
+    <!-- Our products -->
+
+    <section class="text-center">
+      <h1 class="font-bold text-3xl">Our Products</h1>
+      <input
+        class="border border-black mt-3 p-1"
+        style="width: 80%"
+        placeholder="Enter Your favrite Products"
+      />
+
+      <div class="grid md:grid-cols-4 grid-cols-2 mt-5 gap-5">
+        <div>
+          <img
+            src="./images/best seller__1.jpg"
+            class="inline hover:shadow-xl transform hover:-translate-y-2"
+          />
+          <h1>Rose plant</h1>
+          <p>₹30</p>
+        </div>
+        <div>
+          <img
+            src="./images/best seller_2.jpg"
+            class="inline hover:shadow-xl transform hover:-translate-y-2"
+          />
+          <h1>Rose plant</h1>
+          <p>₹20</p>
+        </div>
+        <div>
+          <img
+            src="./images/best seller_3.jpg"
+            class="inline hover:shadow-xl transform hover:-translate-y-2"
+          />
+          <h1>Rose plant</h1>
+          <p>₹50</p>
+        </div>
+        <div>
+          <img
+            src="./images/best seller_4.jpg"
+            class="inline hover:shadow-xl transform hover:-translate-y-2"
+          />
+          <h1>Rose plant</h1>
+          <p>₹300</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-4 grid-cols-2 mt-5 gap-5">
+        <div>
+          <img
+            src="./images/best seller__1.jpg"
+            class="inline hover:shadow-xl transform hover:-translate-y-2"
+          />
+          <h1>Rose plant</h1>
+          <p>₹30</p>
+        </div>
+        <div>
+          <img
+            src="./images/best seller_2.jpg"
+            class="inline hover:shadow-xl transform hover:-translate-y-2"
+          />
+          <h1>Rose plant</h1>
+          <p>₹20</p>
+        </div>
+        <div>
+          <img
+            src="./images/best seller_3.jpg"
+            class="inline hover:shadow-xl transform hover:-translate-y-2"
+          />
+          <h1>Rose plant</h1>
+          <p>₹50</p>
+        </div>
+        <div>
+          <img
+            src="./images/best seller_4.jpg"
+            class="inline hover:shadow-xl transform hover:-translate-y-2"
+          />
+          <h1>Rose plant</h1>
+          <p>₹300</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
